@@ -63,7 +63,7 @@ public class PratoCheioController {
 	public void removerPrato(int idPrato) {
 		validaPrato(idPrato);
 		
-		this.pratos.remove(idPrato);
+		this.pratos.remove(idPrato - 1);
 	}
 	
 	public int contaPratos() {
@@ -133,7 +133,7 @@ public class PratoCheioController {
 	}
 
 	private Prato getPrato(int idPrato) {
-		return this.pratos.get(idPrato);
+		return this.pratos.get(idPrato - 1);
 	}
 
 	private void validaPrato(int idPrato) {
@@ -141,6 +141,6 @@ public class PratoCheioController {
 	}
 
 	private boolean temPrato(int idPrato) {
-		return this.pratos.containsKey(idPrato);
+		return this.pratos.containsKey(idPrato - 1);
 	}
 }

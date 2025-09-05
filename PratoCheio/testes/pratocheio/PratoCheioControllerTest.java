@@ -34,9 +34,10 @@ class PratoCheioControllerTest {
 	@Test
 	void testCadastraPratoPrecoNegativo() {
 		try {
-			
+			pcc.cadastrarPratoRetangular(-2.50, "estampa", 6, 10);
+			fail("Espera-se uma exceção");
 		} catch (PratoCheioException pce) {
-			assertEquals("Preço negativo", pce.getMessage());
+			assertEquals("Parametro negativo.", pce.getMessage());
 		}
 	}
 
